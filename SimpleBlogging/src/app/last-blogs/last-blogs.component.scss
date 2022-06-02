@@ -1,0 +1,13 @@
+.button-wrapper {
+  display: flex;
+  margin: 0 0 50px 50px;
+}
+.button {
+  width: 120px;
+  height: 40px;
+  background-color: skyblue;
+  margin-right: 20px;
+  &:focus {
+    background-color: yellow;
+  }
+}

@@ -1,0 +1,15 @@
+.link{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 10px;
+    &:hover{
+      color: skyblue;
+      text-decoration: none;
+    }
+}
+
+.active{
+  text-decoration: none;
+  color: skyblue;
+}

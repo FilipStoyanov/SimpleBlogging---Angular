@@ -1,0 +1,59 @@
+<section class="blog">
+  <form class="blog__form" [formGroup]="blogForm" (ngSubmit)="onSubmit(blogForm)">
+    <h2 class="blog__title"> Edit blog: {{editedBlog.title}} </h2>
+    <div class="blog__field">
+      <label class="blog__label">Published date</label>
+      <input class="blog__input" type="date" placeholder="Published date" formControlName="date"
+        style="padding-right:20px" defaultValue={{editedBlog.date}} value={{editedBlog.date}} />
+    </div>
+    <div class="blog__field">
+      <label class="blog__label">Title</label>
+      <input class="blog__input" placeholder="Title" formControlName="title" (keyup)="onChangeTitle($event)"  defaultValue={{editedBlog.title}} value={{editedBlog.title}} />
+    </div>
+    <div class="blog__field">
+      <label class="blog__label">Author</label>
+      <input class="blog__input" placeholder="Author" formControlName="author"  defaultValue={{editedBlog.author}} value={{editedBlog.author}} />
+    </div>
+    <!-- <div class="blog__field">
+      <label class="blog__label">Description</label>
+      <input class="blog__input" placeholder="Description" formControlName = "description" />
+    </div> -->
+    <div style="background-color: white; margin-bottom: 30px; color: #1976d2; margin-left: 10px; margin-right: 10px">
+      <angular-editor class="markdown" formControlName="description" [config]="editorConfig"></angular-editor>
+    </div>
+    <mat-form-field class="blog__autocomplete" appearance="fill">
+      <mat-label>Keywords</mat-label>
+      <mat-chip-list #chipList aria-label="Fruit selection">
+        <mat-chip *ngFor="let key of editedBlog.tags" (removed)="remove(key)">
+          {{key}}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+        <input placeholder="New tag..." [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+          (matChipInputTokenEnd)="add($event)" (keyup)="onChangeTags($event)">
+      </mat-chip-list>
+    </mat-form-field>
+    <div class="blog__field">
+      <label class="blog__label">Image URL</label>
+      <input class="blog__input" placeholder="Image URL" formControlName="imageUrl" required  defaultValue={{editedBlog.image}} value={{editedBlog.image}} />
+    </div>
+    <p class="blog__title">Please select your blog status:</p>
+    <div class="blog__radio">
+        <input class="blog__radio-item" type="radio" id="activate" name="status" value="activate" [checked]="this.editedBlog.status=='activate'"
+        formControlName="status">
+        <label for="activate">Activate</label><br>
+        <input class="blog__radio-item" type="radio" id="deactivate" name="status" value="deactivate"  [checked]="this.editedBlog.status=='deactivate'"
+        formControlName="status">
+        <label for="deactivate">Deactivate</label>
+    </div>
+    <div *ngIf="!valid" style="margin-left: 20px">
+      <p class="blog__error">*You should enter image URL. This is a required field</p>
+    </div>
+    <div class="blog__button-wrapper">
+      <button class="blog__button" mat-button color="primary" type="submit">Submit</button>
+    </div>
+  </form>
+</section>
+

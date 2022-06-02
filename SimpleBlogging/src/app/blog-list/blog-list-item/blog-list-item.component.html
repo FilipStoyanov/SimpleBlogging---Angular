@@ -1,0 +1,19 @@
+<a (click)="routeToBlogView()">
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{data.title}}</mat-card-title>
+    <mat-card-subtitle>{{data.author}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="data.image" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+     {{data.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="editBlog()">EDIT</button>
+    <button mat-button (click)="deleteBlog()">DELETE</button>
+  </mat-card-actions>
+</mat-card>
+</a>

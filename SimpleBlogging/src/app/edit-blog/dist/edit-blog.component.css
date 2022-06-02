@@ -1,0 +1,57 @@
+.blog {
+  color: #ffffff;
+  padding-bottom: 50px;
+}
+.blog__field {
+  margin-bottom: 30px;
+}
+.blog__input {
+  width: 100%;
+  border-radius: 25px;
+  height: 55px;
+  padding-left: 15px;
+}
+.blog__autocomplete {
+  width: 100%;
+  border-radius: 25px;
+  background-color: #ffffff;
+  color: #1976d2;
+  margin-bottom: 30px;
+}
+.blog__label {
+  display: block;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.blog__title {
+  font-size: 25px;
+  margin-left: 10px;
+  text-align: left;
+}
+.blog__radio {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.blog__button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.blog__button {
+  width: 100px;
+  height: 40px;
+  background-color: #ffffff;
+  margin-right: 20px;
+}
+.blog__form {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #1976d2;
+  border-radius: 20px;
+  padding: 20px;
+}
+.blog__error {
+  color: gold;
+  margin-bottom: 20px;
+}

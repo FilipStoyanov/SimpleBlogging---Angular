@@ -1,0 +1,22 @@
+<mat-card class="example-card" *ngIf="data">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{data.title}}</mat-card-title>
+    <mat-card-subtitle>{{data.author}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="data.image" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+     {{data.description}}
+    </p>
+    <p>Date: {{data.date}}</p>
+    <p>Status: {{data.status}}</p>
+    <p>Tags:
+      <span *ngFor="let tag of data.tags" class="tag">{{tag}}</span>
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <!-- <button mat-button>EDIT</button>
+    <button mat-button>DELETE</button> -->
+  </mat-card-actions>
+</mat-card>

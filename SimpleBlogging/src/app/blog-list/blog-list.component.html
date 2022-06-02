@@ -1,0 +1,10 @@
+<div class="row">
+  <ngb-alert *ngIf="showAlert" type="danger" class="alert">
+    <strong>Warning!</strong> Deleted successfully
+  </ngb-alert>
+  <div *ngFor="let blog of blogs" class="col-12 col-md-6 col-lg-4" style=" display: flex;
+  justify-content: center;
+  margin-bottom: 30px;">
+    <app-blog-list-item (deleteBlogEmitter) = "removeBlog(blog)" [data]="blog"></app-blog-list-item>
+  </div>
+</div>
